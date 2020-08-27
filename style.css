@@ -1,0 +1,43 @@
+.picture { /* Это картинка <a class="picture" href="#modal"> красного цвета*/
+    width: 100px;
+    height: 100px;
+    background-color: red;    
+}
+.wrapper  { /* Это прозрачная обертка <div id="modal" class="wrapper">, растянутая по всему экрану и находящаяся поверх всех элементов страницы*/
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent; 
+    position: absolute;
+    top: 0;
+    left: 0;  
+} 
+.substrate { /* Это подложка  <a class="substrate" href="#close"> серого цвета с прозрачностью, растянутая по границам обертки <div id="modal" class="wrapper">*/
+    width: 100%;
+    height: 100%;
+    background-color: rgba(100, 100, 100, 0.6);   
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.block { /* Это блок  <div class="block"> синего цвета внутри обертки <div id="modal" class="wrapper">*/
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 255, 1);   
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+}
+.close { /* Это закрывашка <a class="close" href="#close"> блока <div class="block"> , обозначенная крестиком*/ 
+   color: red;
+   font-weight: bold;   
+}
+#modal { /* Это состояние обертки (модального окна), когда оно в "покое": его не видно и на она не реагирует на нажатие*/        
+    display: none;
+    pointer-events: none;  
+}
+#modal:target{  /* Это состояние обертки (модального окна), когда мы на него ссылаемся, нажимая на карктинку <a class="picture" href="#modal">: обертка становится видимой и с ней можно манипулировать мышью*/            
+    display: block;
+    pointer-events: auto;    
+}
